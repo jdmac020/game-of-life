@@ -20,4 +20,12 @@ public class World
 			Biomes.Add(new Biome(_rng));
 		}
 	}
+	
+	public void Update()
+	{
+		foreach (var biome in Biomes)
+			{
+			biome.DoLifeCycle();
+		}
+	}
 }

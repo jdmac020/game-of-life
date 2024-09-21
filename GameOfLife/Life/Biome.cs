@@ -51,11 +51,15 @@ public class Biome
 		}
 	}
 
-    public void DoLifeCycle()
-    {
-        foreach (var cell in Cells)
+	// I don't think this is going to work out long term -- if each 3x3 biome
+	// updates independently of each other, we'll never actually see the whole
+	// world working together and just see the same "frozen" states across the
+	// world of multiple biomes
+	public void DoLifeCycle()
+	{
+		foreach (var cell in Cells)
 		{
 			cell.DoSurvive(Cells);
 		}
-    }
+	}
 }
