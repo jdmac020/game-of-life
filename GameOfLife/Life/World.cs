@@ -21,15 +21,28 @@ public class World
 	private void AddCells(int height, int width)
 	{
 		var liveCells = 0;
-		var xCoord = 0;
-		var yCoord = 0;
+		var xCoord = -1;
+		var yCoord = -1;
+		var xCycle = 0;
 		
 		// intial seeding...
 		for (var i = 0; i < height * width; i++)
 		{
+			xCycle++;
+			// first cell -1,-1
 			var isAlive = _rng.GetRandomInt() % 4 == 0 && liveCells < 5;
-			Cells.Add(new Cell(isAlive, 0, 0));
+			Cells.Add(new Cell(isAlive, xCoord, yCoord));
 			liveCells = Cells.Count(cell => cell.Alive);
+			
+			if (xCycle % 3 == 0)
+			{
+				xCoord++;
+				yCoord = -1;
+			}
+			else 
+			{
+				yCoord ++;
+			}
 		}
 		
 		// ensure at least 2 are alive

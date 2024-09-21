@@ -53,4 +53,15 @@ public class WorldShould
 		
 		result.ShouldBe(2);
 	}
+	
+	[Fact]
+	public void HaveFirstCellAtNegative1Negative1()
+	{
+		var world = new World(_rng.Object, 3, 3);
+
+		world.Cells.First().Coordinate.X.ShouldBe(-1);
+		world.Cells.First().Coordinate.Y.ShouldBe(-1);
+		world.Cells.Last().Coordinate.X.ShouldBe(1);
+		world.Cells.Last().Coordinate.Y.ShouldBe(1);
+	}
 }
