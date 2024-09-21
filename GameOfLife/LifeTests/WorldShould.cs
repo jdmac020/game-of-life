@@ -37,4 +37,20 @@ public class WorldShould
 		
 		result.ShouldBe(5);
 	}
+	
+	[Fact]
+	public void HaveAtLeastTwoLiveCells()
+	{
+		// all dead cells based on RNG
+		_rng.Setup(x => x.GetRandomInt()).Returns(new Random().Next(1,1));
+		_rng.SetupSequence(x => x.GetRandomInt(It.IsAny<int>(), It.IsAny<int>()))
+			.Returns(5)
+			.Returns(2);
+		
+		var world = new World(_rng.Object, 3, 3);
+		
+		var result = world.Cells.Count(cell => cell.Alive);
+		
+		result.ShouldBe(2);
+	}
 }

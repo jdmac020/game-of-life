@@ -3,6 +3,7 @@
 public interface IRandomNumbers
 {
 	int GetRandomInt();
+	int GetRandomInt(int floor, int ceiling);
 }
 
 public class RandomNumbers : IRandomNumbers
@@ -17,8 +18,14 @@ public class RandomNumbers : IRandomNumbers
 		_ceiling = ceiling;
 		_rng = new Random();
 	}
+	
 	public int GetRandomInt()
 	{
 		return _rng.Next(_floor, _ceiling);
+	}
+	
+	public int GetRandomInt(int floor, int ceiling)
+	{
+		return _rng.Next(floor, ceiling);
 	}
 }
