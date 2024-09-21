@@ -20,13 +20,24 @@ public class Cell(bool isAlive, int x, int y)
 			}
 		}
 		
-		if (Alive && (liveNeighbors.Count == 2 || liveNeighbors.Count == 3))
+		if (Alive)
 		{
-			Alive = true;
+			if (liveNeighbors.Count == 2 || liveNeighbors.Count == 3)
+			{
+				Alive = true;
+			}
+			else
+			{
+				Alive = false;
+			}
 		}
 		else
 		{
-			Alive = false;
+			if (liveNeighbors.Count == 3)
+			{
+				Alive = true;
+			}
 		}
+		
 	}
 }
