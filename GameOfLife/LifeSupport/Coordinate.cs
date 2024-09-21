@@ -14,8 +14,8 @@ public class Coordinate
 	public List<Coordinate> GetNeighbors()
 	{
 		return
-        [
-            new(X - 1, Y), // left
+		[
+			new(X - 1, Y), // left
 			new(X + 1, Y), // right
 			new(X, Y - 1), // down
 			new(X, Y + 1), // up
@@ -24,5 +24,17 @@ public class Coordinate
 			new(X + 1, Y + 1), // up right
 			new(X - 1, Y + 1) // up left
 		];
+	}
+
+	public override bool Equals(object? obj)
+	{
+		if (obj is null || obj.GetType() != typeof(Coordinate))
+		{
+			return base.Equals(obj);
+		}
+		
+		var castedObj = (Coordinate)obj;
+		
+		return castedObj.X == this.X && castedObj.Y == this.Y;
 	}
 }
