@@ -29,7 +29,7 @@ public class WorldShould
 	public void HaveNoMoreThanFiveLiveCells()
 	{
 		// all cells will be live based on RNG
-		_rng.Setup(x => x.GetRandomInt()).Returns(new Random().Next(6,6));
+		_rng.Setup(x => x.GetRandomInt()).Returns(new Random().Next(4,4));
 		
 		var world = new World(_rng.Object, 3, 3);
 		
