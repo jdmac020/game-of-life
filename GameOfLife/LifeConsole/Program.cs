@@ -14,8 +14,6 @@ const int rngCeiling = 66;
 
 var rng = new RandomNumbers(rngFloor, rngCeiling);
 var world = new World(rng, worldHeight, worldWidth);
-Console.WriteLine($"Cell1: {world.Cells.First().Coordinate.X},{world.Cells.First().Coordinate.Y}");
-Console.WriteLine($"Cell9: {world.Cells.Last().Coordinate.X},{world.Cells.Last().Coordinate.Y}");
 Console.Write(" ");
 
 for (var i = 0; i < worldWidth; i++)
@@ -26,15 +24,18 @@ for (var i = 0; i < worldWidth; i++)
 Console.WriteLine();
 Console.Write("|");
 
-for (var i = 0; i < world.Cells.Count; i++)
+foreach (var biome in world.Biomes)
 {
-	if (i != 0 && i % worldWidth == 0)
+	for (var i = 0; i < biome.Cells.Count; i++)
 	{
-		Console.WriteLine("|");
-		Console.Write("|");
-	}
-	var display = world.Cells[i].Alive ? "o" : "x";
-	Console.Write(display);
+		if (i != 0 && i % worldWidth == 0)
+		{
+			Console.WriteLine("|");
+			Console.Write("|");
+		}
+		var display = biome.Cells[i].Alive ? "o" : "x";
+		Console.Write(display);
+	}	
 }
 
 Console.Write("|");
