@@ -4,7 +4,7 @@ using LifeSupport;
 
 Console.WriteLine();
 Console.WriteLine();
-Console.WriteLine("It is...a World:");
+Console.WriteLine("In the beginning there was...a World:");
 Console.WriteLine();
 
 const int worldWidth = 3;
@@ -14,7 +14,8 @@ const int rngCeiling = 66;
 
 var rng = new RandomNumbers(rngFloor, rngCeiling);
 var world = new World(rng, worldHeight, worldWidth);
-
+Console.WriteLine($"Cell1: {world.Cells.First().Coordinate.X},{world.Cells.First().Coordinate.Y}");
+Console.WriteLine($"Cell9: {world.Cells.Last().Coordinate.X},{world.Cells.Last().Coordinate.Y}");
 Console.Write(" ");
 
 for (var i = 0; i < worldWidth; i++)

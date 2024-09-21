@@ -7,7 +7,7 @@ namespace LifeSupportTests;
 public class CoordinateShould
 {
 	[Fact]
-	public void BeThreeByThree()
+	public void HaveEightNeighbors()
 	{
 		var expectedNeighbors = new List<Coordinate>
 		{
