@@ -55,4 +55,16 @@ public class BiomeShould
 		biome.Cells.Last().Coordinate.X.ShouldBe(1);
 		biome.Cells.Last().Coordinate.Y.ShouldBe(1);
 	}
+	
+	[Fact]
+	public void UpdateCellStatus()
+	{
+		var biome = new Biome(_rng.Object);
+		var firstRoundCells = biome.Cells.Where(cell => cell.Alive).Count();
+		
+		biome.DoLifeCycle();
+		
+		var postUpdateCells = biome.Cells.Where(cell => cell.Alive).Count();
+		postUpdateCells.Equals(firstRoundCells).ShouldBeFalse();
+	}
 }

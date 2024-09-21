@@ -50,4 +50,12 @@ public class Biome
 			liveCells = Cells.Count(cell => cell.Alive);
 		}
 	}
+
+    public void DoLifeCycle()
+    {
+        foreach (var cell in Cells)
+		{
+			cell.DoSurvive(Cells);
+		}
+    }
 }
