@@ -68,4 +68,67 @@ public class CellShould
 		
 		subject.Alive.ShouldBe(true);
 	}
+	
+	[Fact]
+	public void DieWithFourAliveNeighbors()
+	{
+		var biomeCells = new List<Cell>
+		{
+			new (true, -1,-1),
+			new (false, -1,0),
+			new (false, -1,1),
+			new (true, 1,1),
+			new (true,1,0),
+			new (false,1,-1),
+			new (true,0,-1),
+			new (false,0,1)
+		};
+		var subject = new Cell(true, 0,0);
+		
+		subject.DoSurvive(biomeCells);
+		
+		subject.Alive.ShouldBe(false);
+	}
+	
+	[Fact]
+	public void DieWithOneAliveNeighbors()
+	{
+		var biomeCells = new List<Cell>
+		{
+			new (false, -1,-1),
+			new (false, -1,0),
+			new (false, -1,1),
+			new (false, 1,1),
+			new (true,1,0),
+			new (false,1,-1),
+			new (false,0,-1),
+			new (false,0,1)
+		};
+		var subject = new Cell(true, 0,0);
+		
+		subject.DoSurvive(biomeCells);
+		
+		subject.Alive.ShouldBe(false);
+	}
+	
+	[Fact]
+	public void DieWithAllAliveNeighbors()
+	{
+		var biomeCells = new List<Cell>
+		{
+			new (true, -1,-1),
+			new (true, -1,0),
+			new (true, -1,1),
+			new (true, 1,1),
+			new (true,1,0),
+			new (true,1,-1),
+			new (true,0,-1),
+			new (true,0,1)
+		};
+		var subject = new Cell(true, 0,0);
+		
+		subject.DoSurvive(biomeCells);
+		
+		subject.Alive.ShouldBe(false);
+	}
 }
