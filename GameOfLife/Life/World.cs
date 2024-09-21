@@ -15,9 +15,11 @@ public class World
 
 	private void AddCells(int height, int width)
 	{
+		var rnd = new Random();
 		for (var i = 0; i < height * width; i++)
 		{
-			Cells.Add(new Cell(true));
+			var seed = rnd.Next(0, 99);
+			Cells.Add(new Cell(seed % 6 == 0));
 		}
 	}
 }
