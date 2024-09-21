@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeTests", "LifeTests\Life
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeConsole", "LifeConsole\LifeConsole.csproj", "{17CAF9ED-2470-40AC-995B-5323721B138F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeSupport", "LifeSupport\LifeSupport.csproj", "{C6DCA556-59AB-4E23-94CA-C3FBC3A2579B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,5 +36,9 @@ Global
 		{17CAF9ED-2470-40AC-995B-5323721B138F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17CAF9ED-2470-40AC-995B-5323721B138F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17CAF9ED-2470-40AC-995B-5323721B138F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6DCA556-59AB-4E23-94CA-C3FBC3A2579B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6DCA556-59AB-4E23-94CA-C3FBC3A2579B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6DCA556-59AB-4E23-94CA-C3FBC3A2579B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6DCA556-59AB-4E23-94CA-C3FBC3A2579B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

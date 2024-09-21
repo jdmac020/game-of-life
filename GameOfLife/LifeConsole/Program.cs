@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Life;
+using LifeSupport;
 
 Console.WriteLine();
 Console.WriteLine();
@@ -7,8 +8,12 @@ Console.WriteLine("It is...a World:");
 Console.WriteLine();
 
 const int worldWidth = 3;
+const int worldHeight = 3;
+const int rngFloor = 6;
+const int rngCeiling = 66;
 
-var world = new World();
+var rng = new RandomNumbers(rngFloor, rngCeiling);
+var world = new World(rng, worldHeight, worldWidth);
 
 Console.Write(" ");
 

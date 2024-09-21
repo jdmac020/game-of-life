@@ -1,4 +1,6 @@
 using Life;
+using LifeSupport;
+using Moq;
 using Shouldly;
 
 namespace LifeTests;
@@ -14,10 +16,10 @@ public class CellShould
 	}
 	
 	[Fact]
-    public void BeDead()
-    {
-    	var cell = new Cell(false);
+	public void BeDead()
+	{
+		var cell = new Cell(false);
 
-    	cell.Alive.ShouldBe(false);
-    }
+		cell.Alive.ShouldBe(false);
+	}
 }
